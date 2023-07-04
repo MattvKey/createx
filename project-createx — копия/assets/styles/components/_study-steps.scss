@@ -1,0 +1,67 @@
+.steps-container {
+    max-width: 495px;
+}
+.step {
+    padding-left: 48px;
+    position: relative;
+    min-height: 141px;
+    &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 8px;
+        height: 8px;
+        background-color: $orange;
+        border-radius: 100%;
+        left: 0;
+        top: 0;
+        z-index: 3;
+      
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        height: 89%;
+        background-color: $light-gray;
+        opacity: 50%;
+        width: 1px;
+        left: 3.5px;
+        top: 13px;
+    }
+    .step__heading {
+        .step__subtitle {
+            text-transform: uppercase;
+            font-size: 12px;
+            line-height: 150%;    
+      
+            color: $gray;
+            font-weight: 900;
+        }
+        .step__title {
+            line-height: 160%;
+            color: $dark-gray;
+            font-weight: 700;
+            font-size: 20px;
+        }
+    }
+    .step__text {
+        line-height: 160%;
+        color: $gray;
+        font-weight: 400;
+    }
+    @media screen and (width < 768px){
+        .step__heading {
+            .step__title {
+                font-size: 18px;
+            }
+            .step__subtitle {
+                font-size: 11px;
+            }
+        }
+        .step__text {
+            font-size: 14px;
+        }
+    }
+}
+
+

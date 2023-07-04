@@ -1,0 +1,80 @@
+
+/*--------------------------------------------------------btns with bg--------------------------------------------------------*/
+
+@mixin large-btn /*padding-40*/{
+
+    height: fit-content;
+    width: fit-content;
+    padding: 0px 40px;
+    background-color: $orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    span {
+      font-size: 16px;
+      line-height: 52px;
+      color: $white;
+    }
+}
+@mixin regular-btn /*padding-32*/{
+  @include large-btn();
+  padding: 0px 32px;
+
+  span {
+    font-size: 14px;
+    line-height: 44px;
+  }
+  
+}
+
+@mixin small-btn{
+  @include large-btn();
+  padding: 0px 16px;
+  span {
+    font-size: 12px;
+    line-height: 36px
+  }
+}
+/*--------------------------------------------------------no bg btns--------------------------------------------------------*/
+
+@mixin large-btn_no-bg {
+  @include large-btn();
+  background-color: inherit;
+  border: 1.5px solid $orange;
+  span {
+    color: $orange;
+  }
+}
+@mixin regular-btn_no-bg {
+  @include regular-btn;
+  background-color: inherit;
+  border: 1.5px solid $orange;
+  span {
+    color: $orange;
+    
+  }
+  
+}
+@mixin small-btn_no-bg {
+  @include small-btn;
+  background-color: inherit;
+  border: 1.5px solid $orange;
+  span {
+    color: $orange;
+    
+  }
+  
+}
+/*--------------------------------------------------------btns states--------------------------------------------------------*/
+
+@mixin btn-hover {
+  &:hover {
+    background-color: #e35a55;
+    transition: linear 0.2s;
+    
+    span {
+      color: #fff;
+    }
+    }
+  }

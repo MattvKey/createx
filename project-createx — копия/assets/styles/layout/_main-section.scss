@@ -1,0 +1,107 @@
+.intro__heading-box {
+    max-width: 481px;
+    position: relative;
+  }
+
+  .main-section {
+    .home__intro {
+      padding-bottom: 80px;
+    }
+    padding-top: 90px;
+    .intro {
+      height: fit-content;
+  
+      padding-top: 29px;
+  
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+   
+      .home-intro__first-row {
+        padding-bottom: 20px;
+        margin-bottom: 189px;
+      }
+      .intro__first-row {
+        display: flex;
+        flex-basis: 100%;
+        justify-content: space-between;
+        height: fit-content;
+ 
+      }
+      .intro__second-row {
+        height: fit-content;
+      }
+    }
+  
+  
+   
+    .intro__btn-row {
+      margin-top: 60px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      .btn:first-child {
+        @include large-btn_no-bg;
+        @include btn-hover;
+      }
+      .btn:last-child {
+        @include large-btn;
+        @include btn-hover;
+      }
+    }
+    .intro__image-container {
+      flex-basis: 50%;
+      max-width: 602px;
+      max-height: 551px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    
+  
+    @media screen and (width < 1200px) {
+      .intro {
+        grid-row: auto;
+        .intro__first-row {
+          margin-bottom: 90px;
+        }
+        
+      }
+  
+      .main-section {
+        padding-top: 60px;
+      }
+    }
+    @media screen and (width < 992px) {
+      .intro {
+        padding-top: 0;
+        padding-bottom: 50px;
+      }
+    }
+    @media screen and (width < 576px) {
+      .intro__first-row {
+        .intro__image-container {
+          display: none;
+        }
+      }
+      .intro__btn-row {
+        .btn:first-child {
+          @include regular-btn_no-bg;
+        }
+        .btn:last-child {
+          @include regular-btn;
+        }
+      }
+    }
+    @media screen and (width < 410px) {
+      .intro__btn-row {
+        .btn:first-child {
+          @include small-btn_no-bg;
+        }
+        .btn:last-child {
+          @include small-btn;
+        }
+      }
+    }
+  }

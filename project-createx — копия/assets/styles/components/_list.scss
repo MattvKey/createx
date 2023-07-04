@@ -1,0 +1,25 @@
+.section-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12.5px;
+    
+    .list__item {
+  
+   
+      color: $basic-gray;
+      line-height: 160%;
+      font-size: 16px;
+      font-weight: 400;
+      padding-left: 31px;
+      position: relative;
+     
+  
+      .icon {
+        left: 0;
+        background-image: url('/assets/svgs/who-we-are__elements/check.svg');
+      }
+    }
+  
+  
+    
+  }

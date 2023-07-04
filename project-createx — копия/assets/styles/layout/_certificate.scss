@@ -1,0 +1,103 @@
+.certificate-section {
+
+    padding-top: 120px;
+    
+    .sertificate__container {
+   
+        width: 100%;    
+     
+        .section-header {
+            max-width: 392px;
+            height: fit-content;
+            .title {
+                margin-bottom: 48px;
+            }
+            p {
+                line-height: 160%;
+            }
+            .certificate__brands {
+                margin-top: 32px;
+                display: flex;
+                gap: 46px;
+            }
+        }
+        .certificate__image {
+    
+       
+
+  
+         
+            img {
+                position: relative;
+                z-index: 3;
+                box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.16), 0px 30px 24px -10px rgba(154, 156, 165, 0.1), 0px 12px 10px -6px rgba(154, 156, 165, 0.08), 0px 4px 4px -4px rgba(30, 33, 44, 0.05);
+                bottom: 1px;
+                border-radius: 4px;
+          
+            }
+         
+        }
+       
+        
+    }
+}
+.main__certificate {
+
+    overflow: hidden;
+    margin-bottom: -76px;
+}
+@media screen and (width < 1400px) {
+    .certificate-section {
+        .sertificate__container {
+            .certificate__image {
+                max-width: 50%;
+             }
+        }
+    }  
+    .main__certificate {
+        padding-bottom: 120px;
+   
+    }
+}
+
+@media screen and (width < 992px) {
+    .certificate-section {
+        .sertificate__container {
+            .certificate__image {
+                max-width: 45%;
+             }
+             .section-header {
+                max-width: 45%;
+             }
+        }
+    }  
+    .main__certificate {
+        padding-bottom: 120px;
+   
+    }
+}
+@media screen and (width < 768px) {
+    .certificate-section {
+        .sertificate__container {
+            align-items: center;
+            flex-direction: column;
+            .certificate__image {
+                max-width: 100%;
+             }
+             .section-header {
+                max-width: 100%;
+                text-align: center;
+                margin-bottom: 50px;
+                .certificate__brands {
+                    width: 100%;
+                    justify-content: space-between;
+                    gap: 10px;
+                }
+             }
+        }
+    }  
+    .main__certificate {
+        padding-bottom: 120px;
+   
+    }
+}

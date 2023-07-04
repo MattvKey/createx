@@ -1,0 +1,47 @@
+.decorate-element {
+    position: absolute;
+    display: none;
+    
+
+}
+
+    .nav__decorate {
+
+        top: -42px;
+    }
+    .main__decorate_1 {
+        
+        top: -62px;
+    
+    }
+    .main__decorate_2 {
+        bottom: -90px;
+       
+    }
+    .main__decorate_3 {
+      
+        bottom: 609px;
+        z-index: 0;
+    }
+    .main__decorate_4 {
+      
+        bottom: 195px;
+    }
+    .main__decorate_5 {
+     
+        bottom: 261px;
+    }
+    .certificate__1 {
+        left: 0;
+        bottom: 0;
+    }
+    .certificate__2 {
+        right: 0;
+        bottom: 0;
+    }
+
+@media screen and (width < 1400px ) {
+    .decorate-element {
+        display: none;
+    }
+}

@@ -1,0 +1,142 @@
+$orange:#FF3F3A;
+
+$basic-gray: #424551;
+$dark-gray: #1E212C;
+$gray: #787A80;
+$pink-bg: rgb(254,220,209);
+$yellow: #FFCF2D;
+$green : #03CEA4;
+$blue : #5A87FC;
+$white: #fff;
+$pink: #F52F6E;
+$light-gray: #9A9CA5;
+$light-pink: #F89828;
+$gray-bg: #F4F5F7;;
+
+  @mixin link-style {
+    position: relative;
+    &:after {
+        bottom: -5px;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: $dark-gray;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      
+     &:hover:after {
+      transition: 0.3s;
+        width: 100%;
+        left: 0;
+      }
+}
+
+.section {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  
+}
+.icon {
+  left: 17px;
+
+  position: absolute;
+  color: #000;
+  display: inline-block;
+  width: 20px;
+  height: 21px;
+  background-image: url('/assets/svgs/main-nav/Profile.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.flex-between {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.flex-center {
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+}
+.side-image {
+  max-width: 810px;
+  @media screen and (width < 992px){
+    display: none;
+    
+  }
+}
+.play-icon {
+  position: relative;
+  margin-right: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:before {
+    content: "";
+    border-radius: 100%;
+    opacity: 0.12;
+    width: 84px;
+    height: 84px;
+    background-color: #e35a55;
+    position: absolute;
+  }
+}
+.intro__playicon-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  span {
+    color: $dark-gray;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+}
+.align-center {
+
+
+  display: flex;
+  align-items: center;
+}
+@mixin flex-row_wrap {
+
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (width < 1200px) {
+    flex-wrap: wrap;
+    
+  }
+          
+  @media screen and (width < 576px) {
+    gap: 35px;
+   align-items: center; 
+   flex-direction: column;
+  }
+}
+@mixin flex-col {
+  display: flex;
+  position: relative;
+  align-items: center;
+  @media screen and (width < 1200px) {
+    flex-direction: column;
+    width: 50%;
+    &::after {
+      display: none;
+    }
+  }
+}  
+@mixin link-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}

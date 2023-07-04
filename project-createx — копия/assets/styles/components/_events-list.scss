@@ -1,0 +1,164 @@
+.cources__view-more-box {
+    .btn {
+       
+        @include large-btn;
+        @include btn-hover;
+      
+    }
+}
+.events-list {
+    width: 100%;
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    .events-list__item {
+        &:hover {
+            transition: 0.3s linear;
+            box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08),
+            0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+            0px 12px 10px -6px rgba(154, 156, 165, 0.04),
+            0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+        }
+        background-color: $white;
+        border-radius: 4px;
+        border: 1px solid #E5E8ED;
+        width: 100%;
+        min-height: 126px;
+        padding: 32px 40px;
+        .event-item__container {
+            display: flex;
+            width: 100%;
+            gap: 40px;
+            .events__date {
+               width: 177px;
+               height: 62px;
+               display: grid;
+          
+               grid-template-columns: auto auto;
+               grid-row: auto auto;
+               .events__date-num {
+                font-size: 48px;
+                color: $orange;
+                font-weight: 900;
+                line-height: 130%;
+                grid-row-start: span 2;
+               }
+               .events__date-month {
+                font-size: 20px;
+                line-height: 150%;
+                color: $dark-gray;
+                font-weight: bold;
+                margin-left: 10px;
+               }
+               .events__date-time {
+                font-size: 16px;
+                line-height: 160%;
+                color: $gray;
+                text-align: end;
+                font-weight: 400;
+                margin-right: 3px;
+               }
+            }
+            .events__info {
+                max-width: 757px;
+                p {
+                    margin-bottom: 4px; 
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 30px;
+                    color: $dark-gray;
+                    font-weight: bold;
+                }
+                .span {
+                    color: $gray;
+                    font-size: 16px;
+                    line-height: 160%;
+
+                }
+            }
+            .btn-box {
+                flex-grow: 1;
+                display: flex;
+                justify-content: flex-end;
+                .btn {
+          
+           
+              
+                    @include regular-btn_no-bg;
+                    @include btn-hover;
+                }
+            }
+     
+        }
+    }
+    @media screen and (width < 1200px) {
+        .events-list__item {
+            .event-item__container {
+                gap: 15px;
+                .events__info {
+                    p {
+                        max-width: 400px;
+                    }
+                    span {
+                        font-size: 14px;                    }
+                }
+                .events__date {
+                    align-items: center;
+                    .events__date-time {
+                        text-align: start;
+                        font-size: 14px;
+                    }
+                    .events__date-num {
+                        font-size: 35px
+                    }
+                    .events__date-month {
+                        margin: 0;
+                    }
+                }
+            
+            }
+        }
+    }
+    @media screen and (width < 992px) {
+        .events-list__item {
+            .event-item__container {
+                gap: 10px;
+                .events__info {
+                    p {
+                     
+                        max-width: 370px;
+                    }
+                    span {
+                        font-size: 14px;                    }
+                }
+                .events__date {
+                    width: 150px;
+                   
+                    .events__date-month {
+                        font-size: 16px
+                    }
+                }
+                .btn-box {
+                    .btn {
+                        @include small-btn_no-bg;
+                    }
+                }
+            
+            }
+        }
+    }
+    @media screen and (width < 768px) {
+        .events-list__item {
+            width: 80vw;
+            margin: 0 auto;
+            .event-item__container {
+                display: grid;
+                justify-items: center   ;
+                gap: 30px;
+             
+            
+            }
+        }
+    }
+}

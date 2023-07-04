@@ -1,0 +1,231 @@
+
+@mixin card-style {
+    box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08),
+    0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+    0px 12px 10px -6px rgba(154, 156, 165, 0.04),
+    0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+    border: 1px solid #E5E8ED;
+    border-radius: 4px;
+}  
+@mixin card__image {
+        min-height: 100%;
+        position: relative;
+        .card-image__figure {
+            width: 100%;
+         
+            height: 100%;
+            background-color: $yellow;
+            position: relative;
+            .figure__image {
+                height: 100%;
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%);
+                z-index: 1; 
+            }
+          
+        }
+        .card__img {
+            left: 50%;
+            transform: translate(-50%);
+            
+            top: auto;
+            bottom: 0;
+            height: 100%;
+            position: absolute;
+            z-index: 5;
+
+        }
+    
+}
+    .card__container {
+       
+        display: flex;
+      
+        .card__text-box {
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+          
+            .cource__name {
+                font-size: 20px;
+                font-weight: 700;
+                color: $dark-gray;
+                line-height: 30px;
+           
+            }
+            .cource__price {
+                line-height: 150%;
+                font-size: 18px;
+                .price {
+                    color: $orange;
+                  
+                }
+                .curator {
+                  
+                    color: $gray;
+                }
+            }
+        }
+    }
+
+@mixin column-card-style {
+    width: 390px;
+    @include card-style;
+    .card__container {
+        flex-direction: column;
+        .card__text-box {
+
+           width: 100%;
+        }
+        .card__image {
+            width: 100%;
+            @include card__image;
+            height: 240px;
+          
+    }
+  
+}
+}
+@mixin row-card-style {
+    @include card-style;
+    flex-basis: 600px ;
+    .card__container {
+        flex-direction: row;
+        .card__text-box {
+            max-width: 386px;
+        }
+        .card__image {
+            width: 214px;
+            height: 214px;
+             @include card__image;
+            
+          
+        }
+    }
+}
+@mixin cards__container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.direction {
+    padding: 1px 8px;
+    width: fit-content;
+    color: #fff;
+    line-height: 21px;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #03CEA4;
+
+}
+.section-card_col {
+    @include column-card-style;
+}
+.section-card_row {
+    @include row-card-style;
+}
+@media screen and (width < 1400px){
+    .section-card_row  {
+        flex-basis: 550px;
+        
+     .card__container {
+        .card__image {
+            max-height: 100%;
+            width: 35%;
+        }
+        .card__text-box {
+            gap: 10px;
+            width: 65%;
+            max-height: 160px;
+            overflow: hidden;
+        }
+     }
+    
+    }
+    .cards__container {
+        display: flex;
+        justify-content: center !important; 
+    }
+}
+@media screen and (width < 1200px){
+    .section-card_row  {
+        flex-basis: 400px;
+    } 
+    .section-card_row {
+        .card__container {
+            .card__image {
+                .card__img {
+                    height: 85%;
+                    width: 85%;
+                    top: auto;
+                    bottom: 0;
+                }
+            }
+        } 
+    }
+  
+}     
+@media screen and (width < 480px) {
+    .direction {
+        font-size: 12px;
+    }
+    .section-card_row, .section-card_col {
+      width: 100%; 
+
+        .card__container {
+            width: 100%;
+  
+            .card__image {
+                width: 35%;
+                height: auto;
+                max-height: 170px;
+              
+           
+            }
+            .card__text-box {
+                width: 65%;
+                padding: 15px;
+                gap: 10px;
+             
+                .cource__name {
+                    font-size: 16px;
+                    line-height: 130%;
+                }
+               
+                .cource__price {
+                   
+
+                    
+                    .curator,  .price  {
+                        font-size: 12px;
+                        
+                    }
+                }
+            }
+        }
+      
+    } 
+    .section-card_col {
+        width: 75vw;
+        .card__container {
+            .card__image {
+                width: 100%;
+                height: 150px;
+                .card__img {
+                    height: 90%;
+                    bottom: 0;
+                   
+                    top: auto;
+                }
+            }
+            .card__text-box {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+

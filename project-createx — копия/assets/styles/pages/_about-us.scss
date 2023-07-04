@@ -1,0 +1,109 @@
+
+.about__wrapper {
+  .nav,
+  .main-section {
+    background-color: $white;
+  }
+  .main-section {
+    .about-intro__textbox {
+      max-width: 600px;
+    }
+    padding-top: 11px;
+  }
+  .about-section {
+    
+    .about__container {
+ 
+      .about__image {
+        .intro__playicon-box {
+          .play-icon {
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+      .about-section__statistics__col {
+    
+        
+        display: flex;
+  
+        justify-content: center;
+        padding: 0;
+
+        max-width: 288px;
+        .statistics {
+
+          padding-top: 70px;
+          flex-direction: column;
+          flex-basis: auto;
+
+          .statistics__item {
+            margin-bottom: 46px;
+            gap: 17px;
+   
+            .statistics__num {
+              color: $orange;
+            }
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+      @media screen and (width < 992px) {
+        .about-section__statistics__col {
+          max-width: none;
+          min-width: 100%;
+          .statistics {
+            padding: 0;
+
+            flex-direction: row;
+      
+          }
+        }
+      }
+     
+    }
+  }
+  .our-values-section {
+    padding-top: 180px;
+    padding-bottom: 180px;
+    .our-values__container {
+      .section-header {
+    
+        margin-bottom: 68px;
+      }
+    }
+  }
+  .studying-process-section {
+    padding-bottom: 135px;
+    .studying-process__container {
+      
+      .section-header {
+        margin-bottom: 65px;
+      }
+      .studying-process__content {
+        display: flex;
+        align-items: flex-end;
+        .side-image {
+          max-height: 620px;
+        }
+      }
+    }
+  }
+  .team-section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    .team__container {
+      .team__cards:not(:last-child) {
+        margin-bottom: 60px;
+        margin-top: 60px;
+       
+      }
+      .team__cards {
+        @include flex-row_wrap;
+      } 
+    }
+  }
+}

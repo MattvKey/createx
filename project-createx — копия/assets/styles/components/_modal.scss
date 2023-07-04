@@ -1,0 +1,246 @@
+/* The Modal (background) */
+.modal {
+    z-index: 999;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 80px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    animation: animatetop 0.3s;
+  }
+  @keyframes animatetop {
+    0% {
+        top: -300px;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+  }
+  
+  /* Modal Content */
+  .modal-content {
+
+    
+    background-color: #fefefe;
+    margin: auto;
+    padding: 48px;
+    border: 1px solid #888;
+    min-height: 200px;
+    max-width: 486px
+  }
+  
+  /* The Close Button */
+  .close {
+    width: 20px;
+    height: 20px;
+    color: #aaaaaa;
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        object-fit: cover;
+    }
+  }
+  .modal__title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 150%;
+    color: $dark-gray;
+  }
+  .modal__subtitle {
+    color: $gray;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: center;
+  }
+
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .modal__inner {
+    position: relative;
+ 
+
+    height: 100%;
+    min-width: 100%;
+    .modal-form__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+  
+     
+    
+    }
+    }
+  
+ 
+  
+  .modal__form {
+    display: none;
+    .btn {
+      margin: 24px 0;
+      min-width: 100%;
+      @include large-btn;
+    }
+    .socials {
+      margin-top: 17px;
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      .form__social {
+      
+        img {
+          transition: 0.4s;
+          opacity: 0.6;
+          filter: grayscale(100%);
+          &:hover {
+      
+            opacity: 1;
+            filter: grayscale(0%);
+          }
+        }
+      }
+    }
+  }
+  
+  form.active {
+    display: block;
+  }
+  
+  .password-toggle {
+    position: relative;
+    display: inline-block;
+  }
+
+  .password-toggle .toggle-btn {
+
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+ .form__label-text {
+  line-height: 150%;
+  font-weight: 400;
+  font-size: 14;
+  color: $basic-gray;
+  margin-bottom: 8px;
+ }
+ .modal-form__element {
+  padding: 7px 15px;
+  border: 1px solid #D7DADD;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 20px;
+ 
+  .modal-form-element__inner {
+    width: 100%;
+    padding-right: 59px;
+  }
+}
+.form__switch {
+  display: block;
+  padding-bottom: 24px;
+  font-weight: 400;
+  line-height: 150%;
+  font-size: 14px;
+  position: relative;
+  margin-bottom: 24px;
+  span {
+    color: $orange;
+  }
+  &::after {
+    content: "";
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    width: 485px;
+    height: 0.000001px;
+    border: 1px solid #E5E8ED;
+    display: block;
+  }
+}
+.form__input {
+  &::placeholder {
+    color: $light-gray;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+}
+.form__authentication-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  label {
+    .decorative-checkbox {
+      background-color: $orange;
+      display: inline-block;
+      transform: translateY(2px);
+      position: relative;
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+
+      margin-right: 5px;
+      &::after {
+        display: block;
+        content: "";
+       
+        transform: scale(0);
+        transition: 0.2s ease-in;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url("/assets/svgs/modal/check.svg");
+      }
+    }
+    .check-box {
+      width: 0;
+      height: 0;
+      opacity: 0;
+      position: absolute;
+      z-index: -1;
+    } 
+    .check-box:checked + .decorative-checkbox::after {
+      transform: scale(1);
+    }
+    .check-box_remember:checked + .decorative-checkbox::after {
+      transform: scale(1);
+    }
+  }
+ 
+  .form__forgot-password-link {
+    font-size: 14px;
+    color: $orange;
+    line-height: 150%;
+    font-weight: 500; 
+  }
+}

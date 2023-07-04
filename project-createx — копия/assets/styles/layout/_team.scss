@@ -1,0 +1,152 @@
+.main__team {
+    padding-top: 196px;
+    padding-bottom: 105px;
+    background-color: $gray-bg;
+}
+.team-slide__container {
+    padding: 0;
+}
+
+.team__swiper-heading {
+    align-items: flex-end;
+    margin-bottom: 60px;
+    .team__nav {
+   
+        justify-content: center;
+        display: flex;
+        align-items: center;
+
+        .swiper-button-prev, .swiper-button-next {
+            position: static;
+    
+        }
+        .swiper-button-prev {
+            order: -1;
+        }
+     }
+}
+
+.team__container {
+    .image-slider {
+        .swiper-wrapper {
+            .image-slider__slide {
+                .slide__container {
+                    max-width: none;
+                    width: 100%;
+                    background-color: inherit;
+                }
+            }
+        }
+    }
+}
+.team__cards {
+    width: 100%;
+    display: flex; 
+    gap: 30px;
+    .team__card {
+     
+        display: block;
+        max-width: 285px;
+   
+        flex-basis: 285px;
+
+        .team-card__image {
+            border-radius: 4px 4px 0 0;
+            width: 100%;
+            height: 339px;
+            min-height: auto !important;
+            background-color: $yellow;
+            @include card__image;
+            &:hover {
+                .team-image__hover-element {
+                     opacity: 100%;   
+                    visibility: visible;
+                    transition: 0.5s;
+                }
+            }
+            .team-image__hover-element {
+                visibility: hidden;
+                opacity: 0%;
+                height: 85%;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                position: absolute;
+                z-index: 13;
+       
+                padding: 21px;
+           
+                background: linear-gradient(180deg, rgba(30, 33, 44, 0) 43.9%, rgba(30, 33, 44, 0.03) 55.21%, rgba(30, 33, 44, 0.33) 68.73%, rgba(30, 33, 44, 0.56) 76.17%, rgba(30, 33, 44, 0.768225) 83.75%, rgba(30, 33, 44, 0.92) 91.49%, #1E212C 100%);
+                border-radius: 4px;
+                .team__socials {
+                   height: 100%;
+                   width: 100%;
+                   position: relative;
+                   display: flex;
+                   gap: 14px;
+                   align-items: flex-end;
+                   justify-content: flex-end;
+                   flex-grow: 0;
+                   
+                   .team-social__link:last-child {
+                  margin-bottom: -5px;
+                   }
+                }
+            }
+           
+            .card__img {
+                width: 90%;
+                height: 96%;
+            }
+        }
+        .team-card__textbox {
+         
+            padding-top: 16px;
+            text-align: center;
+            .team-card__name {
+                color: $basic-gray;
+                line-height: 150%;
+                font-size: 20px;
+                font-weight: 700;
+            }
+            .team-card__direction {
+                line-height: 160%;
+                font-weight: 400;
+                color: $gray;
+                font-size: 15px;
+            }
+        }
+    }
+}
+@media screen and (width < 1200px) {
+    .team-slide__container {
+        .team__cards { 
+      
+          gap: 10px;
+        
+        }
+    }   
+ 
+}
+@media screen and (width < 992px) {
+    .main__team {
+        padding-top: 120px;
+    }
+    .team-slide__container {
+        .team__cards { 
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        
+        }
+    }   .image-slider {
+            .team__swiper-heading {
+                justify-content: center;
+
+            }
+            .team__nav {
+                display: none;
+            }
+    }
+ 
+}
